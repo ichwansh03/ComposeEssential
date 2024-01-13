@@ -3,7 +3,9 @@ package com.ichwan.learn.composeessential.basic
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
@@ -11,6 +13,11 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.paddingFromBaseline
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyHorizontalGrid
+import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
@@ -55,16 +62,37 @@ fun SearchBar(modifier: Modifier = Modifier) {
 
 //@Preview(showBackground = true)
 @Composable
-fun AlignYourBodyElement(modifier: Modifier = Modifier) {
+fun AlignYourBodyElement(
+    @DrawableRes drawable: Int,
+    @StringRes text: Int,
+    modifier: Modifier = Modifier
+) {
     Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = modifier) {
         Image(
-            painter = painterResource(id = R.drawable.ic_launcher_background),
+            painter = painterResource(id = drawable),
             contentDescription = null,
             contentScale = ContentScale.Crop,
             modifier = Modifier
                 .size(88.dp)
                 .clip(CircleShape))
-        Text(text = "Body Inversion Background", modifier = Modifier.paddingFromBaseline(top = 24.dp, bottom = 8.dp), style = MaterialTheme.typography.bodyMedium)
+        Text(text = stringResource(id = text), modifier = Modifier.paddingFromBaseline(top = 24.dp, bottom = 8.dp), style = MaterialTheme.typography.bodyMedium)
+    }
+}
+
+private val alignYourBodyData: List<Pair<Int, Int>> = listOf(
+    R.drawable.ic_launcher_background to R.string.app_name,
+    R.drawable.ic_launcher_background to R.string.app_name,
+    R.drawable.ic_launcher_background to R.string.app_name,
+    R.drawable.ic_launcher_background to R.string.app_name,
+    R.drawable.ic_launcher_background to R.string.app_name,
+    R.drawable.ic_launcher_background to R.string.app_name,
+)
+
+@Preview(showBackground = true)
+@Composable
+fun AlignYourBodyLazyRow(modifier: Modifier = Modifier) {
+    LazyRow(contentPadding = PaddingValues(horizontal = 16.dp), horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = modifier) {
+        items(alignYourBodyData) { (drawableRes, text) -> AlignYourBodyElement(drawableRes, text) }
     }
 }
 
@@ -86,7 +114,7 @@ fun FavoriteCollectionCard(
     }
 }
 
-@Preview(showBackground = true)
+//@Preview(showBackground = true)
 @Composable
 fun FavoriteCollectionCardPreview(){
     FavoriteCollectionCard(drawable = R.drawable.ic_launcher_background, text = R.string.app_name, modifier = Modifier.padding(8.dp))
