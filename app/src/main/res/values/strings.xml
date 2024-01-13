@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ComposeEssential</string>
+    <string name="title_activity_essential">EssentialActivity</string>
+</resources>
