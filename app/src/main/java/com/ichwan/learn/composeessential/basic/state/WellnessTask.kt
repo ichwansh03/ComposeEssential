@@ -1,4 +1,4 @@
-package com.ichwan.learn.composeessential.basic
+package com.ichwan.learn.composeessential.basic.state
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf

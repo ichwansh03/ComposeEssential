@@ -1,12 +1,11 @@
-package com.ichwan.learn.composeessential.basic
+package com.ichwan.learn.composeessential.basic.state
 
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 
-fun getWellnessTasks() = List(30) { i -> WellnessTask(i, "Task # $i", false)}
+fun getWellnessTasks() = List(30) { i -> WellnessTask(i, "Task # $i", false) }
 
 @Composable
 fun WellnessTaskList(

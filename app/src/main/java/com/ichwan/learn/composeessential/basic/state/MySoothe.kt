@@ -1,4 +1,4 @@
-package com.ichwan.learn.composeessential.basic
+package com.ichwan.learn.composeessential.basic.state
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
@@ -223,7 +223,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
 
 @Composable
 fun MySootheAppPotrait() {
-    Scaffold (bottomBar = { SootheBottomNavigation()}){
+    Scaffold (bottomBar = { SootheBottomNavigation() }){
         HomeScreen(Modifier.padding(it))
     }
 }
