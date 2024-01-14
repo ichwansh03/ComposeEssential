@@ -12,3 +12,4 @@ token: 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
 * Terdapat 3 window class size: compact, medium dan expanded. Update screen agar lebih fleksibel dengan `WindowSizeClass` (fitur masih experimental)
 * Stateful composable function dapat digunakan lebih dari satu function dengan state yang sama.
 * Jika kompleksitas data makin scale up, gunakan `ViewModels` untuk menghandle UI state dan akses ke business logic pada layer lainnya
+* `AnimatedVisibility` menyediakan properties yang mendukung expand in dan expand out dari sebuah elemen.
