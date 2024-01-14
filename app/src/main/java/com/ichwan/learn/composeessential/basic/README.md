@@ -10,4 +10,5 @@ token: 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
 * `Scaffold` adalah fundamental structure yang memberikan standarisasi layout yang kompleks.
 * `NavigationRail` digunakan untuk menghandle navigation bar ketika terjadi perubahan layout ke landscape
 * Terdapat 3 window class size: compact, medium dan expanded. Update screen agar lebih fleksibel dengan `WindowSizeClass` (fitur masih experimental)
-* 
+* Stateful composable function dapat digunakan lebih dari satu function dengan state yang sama.
+* Jika kompleksitas data makin scale up, gunakan `ViewModels` untuk menghandle UI state dan akses ke business logic pada layer lainnya
