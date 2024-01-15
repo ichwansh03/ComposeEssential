@@ -28,12 +28,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.ichwan.learn.composeessential.R
+import com.ichwan.learn.composeessential.tiptimeapp.TipTimeLayout
 
 class EssentialActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MyApp()
+            TipTimeLayout()
         }
     }
 }
