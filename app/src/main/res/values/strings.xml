@@ -26,4 +26,7 @@
     <string name="edit">EDIT</string>
     <string name="edit_message">Edit feature is not supported</string>
     <string name="refresh">Refresh</string>
+    <string name="calculate_tip">Calculate Tip</string>
+    <string name="bill_amount">Bill Amount</string>
+    <string name="tip_amount">Tip Amount: %s</string>
 </resources>
