@@ -1,5 +1,6 @@
 package com.ichwan.learn.composeessential.tiptimeapp
 
+import androidx.annotation.VisibleForTesting
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -34,7 +35,7 @@ fun TipTimeLayout(){
     var amountInput by remember { mutableStateOf("") }
 
     val amount = amountInput.toDoubleOrNull() ?: 0.0
-    val tip = calculateTip(amount)
+    val tip = calculateTip(amount, 20.00, false)
 
     Column(
         modifier = Modifier
@@ -74,7 +75,11 @@ fun EditNumberField(value: String, onValueChange: (String) -> Unit, modifier: Mo
     )
 }
 
-private fun calculateTip(amount: Double, tipPercent: Double = 15.0): String {
-    val tip = tipPercent / 100 * amount
+@VisibleForTesting
+internal fun calculateTip(amount: Double, tipPercent: Double = 15.0, roundUp: Boolean): String {
+    var tip = tipPercent / 100 * amount
+    if (roundUp) {
+        tip = kotlin.math.ceil(tip)
+    }
     return NumberFormat.getCurrencyInstance().format(tip)
 }

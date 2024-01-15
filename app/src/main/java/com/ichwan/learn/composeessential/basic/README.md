@@ -13,3 +13,4 @@ token: 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
 * Stateful composable function dapat digunakan lebih dari satu function dengan state yang sama.
 * Jika kompleksitas data makin scale up, gunakan `ViewModels` untuk menghandle UI state dan akses ke business logic pada layer lainnya
 * `AnimatedVisibility` menyediakan properties yang mendukung expand in dan expand out dari sebuah elemen.
+* `ComposeTestRule` digunakan untuk melakukan UI test
